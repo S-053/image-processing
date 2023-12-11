@@ -63,7 +63,7 @@ function convertirAAzul(evt: any): void{
 //este codigo se agreo el 4 de abril de 2022
 function convertirTricolor(evt: any): void{
   var imagenSal:ImageType = new ImageType(pantalla1, imgLocal.getImage());
-  imagenSal.imageArray2DtoData(pantalla2, MathImg.toTricolor(imagenSal));
+  imagenSal.imageArray2DtoData(pantalla2, MathImg.toTricolorH(imagenSal));
 }
 ////////////hasta aqui
 function correccionGamma(evt: any): void{
