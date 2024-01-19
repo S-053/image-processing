@@ -422,7 +422,11 @@ function tAfin(evt: any): void{
   var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
   imagenSal.imageArray2DtoData(pantalla2, MathImg.tAfin(imagenSal, factores));
 }
-
+function realcePrac2(evt: any): void{
+  
+  var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
+  imagenSal.imageArray2DtoData(pantalla2, MathImg.realcePrac2(imagenSal));
+}
 lienzo1.addEventListener('mousemove', handleMouse);
  
 lienzo1.addEventListener("mousemove", imgLocal.drawSmallImg);
@@ -431,6 +435,7 @@ document.getElementById('files2').addEventListener('change', imgLocal4.handleFil
 dropZone.addEventListener('dragover', handleDragOver, false);
 dropZone.addEventListener('drop', imgLocal.handleFileSelect, false);
 //menu op basicas
+document.getElementById("op-realce").addEventListener('click', realcePrac2,false);
 document.getElementById("op-gris").addEventListener('click', convertirAGris, false);
 document.getElementById("op-negativo").addEventListener('click', convertirANegativo, false);
 document.getElementById("op-neg-gris").addEventListener('click', convertirANegativoGrises, false);

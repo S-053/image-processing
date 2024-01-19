@@ -1202,6 +1202,19 @@ var MathImg = /** @class */ (function () {
       */
         return sal;
     };
+    MathImg.realcePrac2 = function (img) {
+        var sal = this.initArray(img.getWidth(), img.getHeight());
+        sal = this.changeContraste(img, -30);
+        var factor = 15;
+        for (var i = 0; i < img.getHeight(); i++) {
+            for (var j = 0; j < img.getWidth(); j++) {
+                sal[0][i][j] = sal[0][i][j] + factor;
+                sal[1][i][j] = sal[1][i][j] + factor;
+                sal[2][i][j] = sal[2][i][j] + factor;
+            }
+        }
+        return sal;
+    };
     return MathImg;
 }());
 export { MathImg };
