@@ -1,3 +1,5 @@
+import { ImageType } from "./ImageType.js";
+import { ImageLocal } from "./ImageLocal.js";
 var MathImg = /** @class */ (function () {
     function MathImg() {
     }
@@ -1200,6 +1202,50 @@ var MathImg = /** @class */ (function () {
           }
         }
       */
+        return sal;
+    };
+    MathImg.realcePrac2 = function (img) {
+        //variable que guarda el arreglo 3d de la imagen de color
+        var pantalla2;
+        var lienzo2;
+        var imgLocal = new ImageLocal(pantalla2);
+        var arrImage = img.getArrayImg();
+        //variable donde guardamos la salida
+        var newHeight = img.getHeight(), newWitdh = img.getWidth();
+        var sal = this.initArray(newWitdh, newHeight);
+        sal = this.toGray(img);
+        var imagenSal = new ImageType(pantalla2, imgLocal.getImage());
+        sal = this.changeContraste(imagenSal, 80);
+        console.log(sal);
+        for (var i = 0; i < img.getHeight(); i++) {
+            for (var j = 0; j < img.getWidth(); j++) {
+                //0.299 + 0.587G + 0.114B.
+                var prom = (0.299 * arrImage[0][i][j] + 0.587 * arrImage[1][i][j] + 0.114 * arrImage[2][i][j]);
+                sal[0][i][j] = prom;
+                sal[1][i][j] = prom;
+                sal[2][i][j] = prom;
+            }
+        }
+        return sal;
+    };
+    MathImg.bordes = function (img) {
+        var arrImage = img.getArrayImg();
+        var width = img.getWidth();
+        var height = img.getHeight();
+        var sal = this.initArray(width, height);
+        var bn = this.toGray(img);
+        for (var i = 1; i < height - 1; i++) {
+            for (var j = 1; j < width - 1; j++) {
+                var gx = (bn[0][i - 1][j - 1] + 2 * bn[0][i][j - 1] + bn[0][i + 1][j - 1] -
+                    bn[0][i - 1][j + 1] - 2 * bn[0][i][j + 1] - bn[0][i + 1][j + 1]);
+                var gy = (bn[0][i - 1][j - 1] + 2 * bn[0][i - 1][j] + bn[0][i - 1][j + 1] -
+                    bn[0][i + 1][j - 1] - 2 * bn[0][i + 1][j] - bn[0][i + 1][j + 1]);
+                var magnitude = Math.sqrt(gx * gx + gy * gy);
+                sal[0][i][j] = magnitude;
+                sal[1][i][j] = magnitude;
+                sal[2][i][j] = magnitude;
+            }
+        }
         return sal;
     };
     return MathImg;

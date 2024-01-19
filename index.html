@@ -5,20 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procesamiento de Imagenes</title>
     <link rel="stylesheet" href="style/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
 </head>
 <body>
-    <section class="container">
+   
+    <div class="container-fluid"  >
         <header class="header">
-            <ul class="nav">
+            <ul class="nav" >
                 <li><span>INICIO</span>
                     <ul>           
-                        <li><label for="files" > Abrir archvivo</label></li>
+                        <li><label for="files" > Abrir archcivo</label></li>
                         
                     </ul>
                 </li>
                 <li><span>Op. Básicas</span>
                     <ul>           
                         <li><span id="op-gris">Grises</span></li>
+                        <li><span id="op-realce">Realce</span></li>
+                        <li><span id="bordes">bordes</span></li>
                         <li><span id="op-negativo">Negativo</span></li>
                         <li><span id="op-neg-gris">Negativo de grises</span></li>
                         <li><span >Canales</span>
@@ -121,10 +126,26 @@
                 </li>
             </ul>
         </header>
-        <section class="img-container1">Imagen 1
+        <div class="row">  
+      <div class="col">  
+        <section class="img-container1">
             <div class="item img-item">
                 <canvas id="img1" width="300" height="300" crossorigin="anonymous"> </canvas>
             </div>
+        </section>
+    </div>
+    
+        <div class="col">  
+            <section class="img-container2">
+                <div class="item img-item">
+                    <canvas id="img2" width="300" height="300"> </canvas>
+                </div>
+                <!-- <div class="item">
+                    <button id="gris">Convertir a gris</button>
+                </div> -->
+            </section>
+        </div>
+        </div>
             <div id="item">
                 <a href="" id="color"> </a> <output id="rgb">RGB:</output>
             </div>
@@ -135,31 +156,36 @@
                 <output id="list"></output>
             </div>
         </section> 
-        <section class="img-container2">Imagen 2
-            <div class="item img-item">
-                <canvas id="img2" width="300" height="300"> </canvas>
-            </div>
-            <!-- <div class="item">
-                <button id="gris">Convertir a gris</button>
-            </div> -->
-        </section>
-        <section class="img-container3">Imagen 3</section>
-        <section class="img-container4">Imagen 4
+       
+    </div>    
+    <div class="row">  
+        <div class="col">  
+        <section class="img-container4">
             <div class="item img-item">
                 <canvas id="img4" width="300" height="300" crossorigin="anonymous"> </canvas>
             </div>
-            <div class="item">
-                <input type="file" id="files2" name="files" />
-            </div>
-            <div class="item">
-                <output id="list2"></output>
-            </div>
-        </section>
-        <section class="img-container5">Imagen 5</section>
-        <section class="img-container6">Imagen 6</section>
+           </div>
+            <div class="col">  
+                <div class="item">
+                    <output id="list2"><canvas id="img4" width="300" height="300" crossorigin="anonymous"> </canvas>
+                    </div></output>
+                </div>
+                      
+        </div>
+        <div class="item">
+            <input type="file" id="files2" name="files" />
+        </div>
+    </section> 
+   
+</div>   
     </section>
-    <script src="dist/src/index.js"  type="module">
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+    </script>
+    <script src="dist/src/index.js"  type="module">  
     </script>
 </body>
 </html>

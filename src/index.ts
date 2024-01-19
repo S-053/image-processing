@@ -422,7 +422,15 @@ function tAfin(evt: any): void{
   var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
   imagenSal.imageArray2DtoData(pantalla2, MathImg.tAfin(imagenSal, factores));
 }
-
+function realcePrac2(evt: any): void{
+  
+  var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
+  imagenSal.imageArray2DtoData(pantalla2, MathImg.realcePrac2(imagenSal));
+}
+function borde(evt: any): void{
+  var imagenSal: ImageType = new ImageType(pantalla1, imgLocal.getImage());
+  imagenSal.imageArray2DtoData(pantalla2, MathImg.bordes(imagenSal));
+}
 lienzo1.addEventListener('mousemove', handleMouse);
  
 lienzo1.addEventListener("mousemove", imgLocal.drawSmallImg);
@@ -434,6 +442,8 @@ dropZone.addEventListener('drop', imgLocal.handleFileSelect, false);
 document.getElementById("op-gris").addEventListener('click', convertirAGris, false);
 document.getElementById("op-negativo").addEventListener('click', convertirANegativo, false);
 document.getElementById("op-neg-gris").addEventListener('click', convertirANegativoGrises, false);
+document.getElementById("bordes").addEventListener('click', borde, false);
+
 document.getElementById("op-rojo").addEventListener('click', convertirARojo, false);
 document.getElementById("op-verde").addEventListener('click', convertirAVerde, false);
 document.getElementById("op-azul").addEventListener('click', convertirAAzul, false);
@@ -472,6 +482,7 @@ document.getElementById("op-marca-agua-array").addEventListener('click', marcaAg
 //op con efectos
 document.getElementById("op-rain").addEventListener('click', rain, false);
 document.getElementById("op-rain2").addEventListener('click', rain2, false);
+document.getElementById("op-realce").addEventListener('click', realcePrac2,false);
 
 //op con texto.
 document.getElementById("op-text").addEventListener('click', textEfects, false);

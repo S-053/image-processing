@@ -1,5 +1,5 @@
 * {
-    background-color: lightgray;
+    background-color: rgb(240, 116, 116);
     padding: 0;
     margin: 0;
 }
@@ -7,13 +7,15 @@
   display: grid;
   grid-template: 40px 360px 350px/ 1fr 1fr 1fr;
   margin:0 auto;
+ 
   grid-template-areas: "header header header"
                        "img-container1 img-container2 img-container3"
                        "img-container4 img-container5 img-container6";
+                       
 }
 
 .header{
-  width: 1300px;
+  width: auto;
   font-family: Arial, Helvetica, sans-serif;
   grid-area: header;
 }
@@ -22,11 +24,13 @@ ul{
   list-style: none;
 }
 .nav li span{
-  background-color: black;
+  background-color: rgb(194, 204, 58);
   color: white;
   text-decoration: none;
   padding: 10px 15px;
   display: block;
+  
+
 }
 .nav li span:hover{
   background-color: darkolivegreen;
@@ -37,7 +41,7 @@ ul{
 }
 
 .nav ul li label{
-  background-color: black;
+  background-color: rgb(0, 191, 255);
   color: white;
   padding: 10px 15px;
 }
@@ -57,7 +61,7 @@ ul{
   top: 0;
 }
 .im-container1{
-  grid-area: img-container1;
+  grid-area: img-container1 ;
 }
 .im-container2{
   grid-area: img-container2;
@@ -79,5 +83,10 @@ output li{
 }
 #color{
   padding: 2px 20px;
-  background-color: black;
+  background-color: rgba(0, 248, 107, 0.633);
+}
+[class *= 'col']{
+  padding: 1rem;
+  border: 5px solid rgb(6, 96, 1);
+  background-color: rgb(240, 20, 20);
 }
